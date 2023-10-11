@@ -21,4 +21,4 @@ authorize($note['user_id'] == $currentUserId, Response::FORBIDDEN);
 
 
 
-require('view/note.view.php');
+require('view/notes/show.view.php');

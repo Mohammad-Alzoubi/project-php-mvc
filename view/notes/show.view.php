@@ -15,4 +15,4 @@
     </div>
 </main>
 
-<?php require('view/partials/footer.php')?>
+<?php require('view/partials/footer.php') ?>
