@@ -11,8 +11,7 @@
         <p class="mb-6">
             <a href="/notes" class="text-blue-500 underline">Go back...</a>
         </p>
-
-        <p> <?= $note['body'] ?> </p>
+        <?= htmlspecialchars($note['body']) ?>
     </div>
 </main>
 
