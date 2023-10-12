@@ -3,15 +3,17 @@
 const BASE_PATH = __DIR__ . '/../';
 
 
-require BASE_PATH . 'function.php';
+require BASE_PATH . 'Core/function.php';
 
 //require base_path( 'Database.php'); Or
 spl_autoload_register(function ($class){
-    require base_path("Core/{$class}.php");
+
+    $class = str_replace('\\',DIRECTORY_SEPARATOR, $class);
+    require base_path("{$class}.php");
 });
 
 //require base_path( 'Response.php');
-require base_path( 'router.php');
+require base_path( 'Core/router.php');
 
 
 //

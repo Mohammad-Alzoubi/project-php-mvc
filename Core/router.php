@@ -1,9 +1,10 @@
 <?php
 
+namespace Core;
 
 
 $uri    = parse_url($_SERVER['REQUEST_URI'])['path'];
-$routes = require 'routers.php';
+$routes = require base_path('routers.php');
 
 
 //solution one
@@ -18,7 +19,7 @@ $routes = require 'routers.php';
 
 function routeToController($uri, $routes){
     if (array_key_exists($uri, $routes)){
-        require $routes[$uri];
+        require base_path($routes[$uri]);
     }else {
         abort(404);
     }
@@ -27,7 +28,7 @@ function routeToController($uri, $routes){
 function abort($code = 404){
 
     http_response_code($code);
-    require "view/{$code}.php";
+    require base_path("view/{$code}.php");
     die();
 }
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Core;
+
 class Validator
 {
     public static function string($value, $min= 1, $max= INF) // you can use static method when the all classe don't use 'this'
